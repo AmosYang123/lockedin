@@ -1,10 +1,12 @@
 import { useEffect, useMemo, useState } from 'react'
 import { BottomRow } from './components/BottomRow'
+import { DataMenu } from './components/DataMenu'
 import { HabitMatrix, type EditTarget } from './components/HabitMatrix'
 import { TopRow } from './components/TopRow'
 import { Logo } from './components/ui'
 import { fromKey, toKey } from './lib/dates'
 import { createHabit, dropFromLog, toggleLog, type Habit, type HabitDraft, type Log } from './lib/habits'
+import type { Backup } from './lib/backup'
 import type { View } from './lib/stats'
 import { loadHabits, loadLog, saveHabits, saveLog } from './lib/storage'
 
@@ -52,6 +54,13 @@ export default function App() {
     setEditing(null)
   }
 
+  const importBackup = (backup: Backup) => {
+    setHabits(backup.habits)
+    setLog(backup.log)
+    setFocused(null)
+    setEditing(null)
+  }
+
   return (
     <main className="mx-auto flex min-h-dvh max-w-[1480px] flex-col gap-3 px-8 py-5 [@media(min-height:820px)]:h-dvh">
       <header className="flex h-9 shrink-0 items-center justify-between">
@@ -59,9 +68,12 @@ export default function App() {
           <Logo size={26} />
           LockedIn
         </h1>
-        <p className="text-[13px] text-muted">
-          {fromKey(today).toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}
-        </p>
+        <div className="flex items-center gap-4">
+          <p className="text-[13px] text-muted">
+            {fromKey(today).toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}
+          </p>
+          <DataMenu habits={habits} log={log} today={today} onImport={importBackup} />
+        </div>
       </header>
 
       <TopRow view={view} />
