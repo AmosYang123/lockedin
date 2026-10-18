@@ -134,6 +134,7 @@ describe('storage parsing', () => {
       'nope',
     ])
     expect(parsed).toEqual([{ ...good, name: 'Gym' }])
+    expect(parseHabits([{ ...good, icon: 'friends' }])).toHaveLength(1)
     expect(parseHabits({ not: 'an array' })).toEqual([])
   })
 

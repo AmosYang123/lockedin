@@ -243,7 +243,7 @@ function HabitRow({ habit, view, keys, columns, colClass, focused, dimmed, onFoc
         <button
           type="button"
           aria-pressed={focused}
-          title={scheduleLabel(habit.schedule)}
+          title={`${habit.name} · ${scheduleLabel(habit.schedule)}`}
           onClick={onFocus}
           className={`-ml-2 flex h-7 min-w-0 flex-1 items-center gap-2.5 rounded-[6px] border px-2 text-left text-[13px] font-medium transition-colors ${
             focused ? 'border-[#8cc4ff] text-white' : 'border-transparent text-[#e6e6e6] hover:text-white'

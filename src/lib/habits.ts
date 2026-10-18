@@ -2,7 +2,7 @@ export type Schedule = 'daily' | number[] // weekdays, 0 = Sunday
 
 export const HABIT_ICONS = [
   'sun', 'moon', 'brain', 'focus', 'dumbbell', 'bike', 'footprints', 'droplets',
-  'glass', 'salad', 'pill', 'book', 'graduation', 'pen', 'code', 'phone-off',
+  'glass', 'salad', 'pill', 'book', 'graduation', 'pen', 'code', 'phone-off', 'friends',
 ] as const
 
 export type HabitIcon = (typeof HABIT_ICONS)[number]
