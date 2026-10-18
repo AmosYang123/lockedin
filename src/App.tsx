@@ -65,7 +65,7 @@ export default function App() {
     <main className="mx-auto flex min-h-dvh max-w-[1480px] flex-col gap-3 px-8 py-5 [@media(min-height:820px)]:h-dvh">
       <header className="flex h-9 shrink-0 items-center justify-between">
         <h1 className="flex items-center gap-2.5 text-[19px] font-extrabold tracking-[-0.035em]">
-          <Logo size={26} />
+          <Logo size={22} />
           LockedIn
         </h1>
         <div className="flex items-center gap-4">

@@ -76,10 +76,19 @@ export function Ring({ pct, size, stroke, children }: { pct: number; size: numbe
 
 export function Logo({ size = 26 }: { size?: number }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 32 32" aria-hidden>
-      <path d="M10 14V10.5a6 6 0 0 1 12 0V14" fill="none" stroke="var(--color-lime)" strokeWidth="3" strokeLinecap="round" />
-      <rect x="5" y="13" width="22" height="16" rx="4.5" fill="var(--color-lime)" />
-      <path d="m11.5 21 3.2 3.2 6-6.2" fill="none" stroke="#0a0a0a" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" />
+    <svg width={size} height={size} viewBox="0 0 32 32" fill="none" aria-hidden>
+      <path d="M10 14v-4a6 6 0 0 1 12 0v4" stroke="#c8523b" strokeWidth="4" strokeLinecap="round" />
+      <path
+        d="M8 12.5h16a3.5 3.5 0 0 1 3.5 3.5v3l-2.5 2 2.5 2v2.5A3.5 3.5 0 0 1 24 29H8a3.5 3.5 0 0 1-3.5-3.5V23L7 21l-2.5-2v-3A3.5 3.5 0 0 1 8 12.5Z"
+        fill="#c8523b"
+      />
+      <path
+        d="m10.5 20.5 4 4 7-7"
+        stroke="#f5f0e8"
+        strokeWidth="2.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   )
 }
